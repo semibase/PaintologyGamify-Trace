@@ -21,7 +21,7 @@ android {
         versionName '3.0'
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
-        project.archivesBaseName = "line_drawing"
+        project.archivesBaseName = "trace_drawing"
 
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -31,6 +31,14 @@ android {
 //            }
 //        }
     }
+    def date = new Date();
+    def formattedDate = date.format('dd_MM_yyyy')
+    applicationVariants.configureEach { variant ->
+        variant.outputs.configureEach {
+            outputFileName = formattedDate + "_Paintology_Trace_Drawing_app_release_${defaultConfig.versionCode}.apk"
+        }
+    }
+
 //    sourceSets {
 //        androidTest.assets.srcDirs += files("$projectDir/schemas".toString())
 //    } eEw
