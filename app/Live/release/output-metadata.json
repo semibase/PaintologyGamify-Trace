@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.paintology.lite.line.drawing",
+  "applicationId": "com.paintology.lite.trace.drawing",
   "variantName": "LiveRelease",
   "elements": [
     {
@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 6,
       "versionName": "3.0",
-      "outputFile": "line_drawing-Live-release.apk"
+      "outputFile": "26_05_2025_Paintology_Trace_Drawing_app_release_6.apk"
     }
   ],
   "elementType": "File"

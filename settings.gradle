@@ -1,4 +1,4 @@
-rootProject.name = "LineDrawing"
+rootProject.name = "TraceDrawing"
 include ':app', 'autolinklibrary'
 include ':materialtagview'
 include ':hlistview'
