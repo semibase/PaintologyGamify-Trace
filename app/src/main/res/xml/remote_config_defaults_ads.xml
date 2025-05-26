@@ -7,67 +7,67 @@
     </entry>
 
     <entry>
-        <key>interOnOff_ld</key>
+        <key>interOnOff_td</key>
         <value>0</value>
     </entry>
 
     <entry>
-        <key>openAdOnOff_ld</key>
+        <key>openAdOnOff_td</key>
         <value>0</value>
     </entry>
 
     <entry>
-        <key>bannerOnOff_ld</key>
+        <key>bannerOnOff_td</key>
         <value>0</value>
     </entry>
 
     <entry>
-        <key>nativeOnOff_ld</key>
+        <key>nativeOnOff_td</key>
         <value>0</value>
     </entry>
 
     <entry>
-        <key>interRewardOnOff_ld</key>
+        <key>interRewardOnOff_td</key>
         <value>0</value>
     </entry>
 
     <entry>
-        <key>openAdID_ld</key>
+        <key>openAdID_td</key>
         <value>ca-app-pub-3940256099942544/9257395921</value>
     </entry>
 
     <entry>
-        <key>interIDs_ld</key>
+        <key>interIDs_td</key>
         <value>ca-app-pub-3940256099942544/1033173712</value>
     </entry>
 
     <entry>
-        <key>interRewardIDs_ld</key>
+        <key>interRewardIDs_td</key>
         <value>ca-app-pub-3940256099942544/5354046379</value>
     </entry>
 
     <entry>
-        <key>interUserPointActivityRewardIDs_ld</key>
+        <key>interUserPointActivityRewardIDs_td</key>
         <value>ca-app-pub-3940256099942544/5354046379</value>
     </entry>
 
     <entry>
-        <key>interProgressActivityRewardIDs_ld</key>
+        <key>interProgressActivityRewardIDs_td</key>
         <value>ca-app-pub-3940256099942544/5354046379</value>
     </entry>
 
     <entry>
-        <key>nativeIDs_ld</key>
+        <key>nativeIDs_td</key>
         <value>ca-app-pub-3940256099942544/2247696110</value>
     </entry>
 
     <entry>
-        <key>bannerIDs_ld</key>
+        <key>bannerIDs_td</key>
         <value>ca-app-pub-3940256099942544/2014213617</value>
     </entry>
 
     <entry>
-        <key>admobAppID_ld</key>
+        <key>admobAppID_td</key>
         <value>ca-app-pub-3940256099942544~3347511713</value>
     </entry>
 
