@@ -1,0 +1,6 @@
+rootProject.name = "LineDrawing"
+include ':app', 'autolinklibrary'
+include ':materialtagview'
+include ':hlistview'
+include ':cardflipview'
+include ':core'
