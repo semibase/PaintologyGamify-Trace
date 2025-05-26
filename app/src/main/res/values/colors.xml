@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorMain">#007d65</color>
-    <color name="colorBack">#02FFCE</color>
+    <color name="colorMain">#930a0a</color>
+    <color name="colorBack">#f56f6f</color>
     <color name="color_gallery_filter_dialog_text">#ffffff</color>
     <color name="drawer_icon_color">#FFFFFF</color>
     <color name="common_button_color">#FFadadad</color>
