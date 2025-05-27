@@ -319,6 +319,18 @@ public class FirstScreen extends AppCompatActivity {
                         AppUtils.saveTotalDrawBanners(FirstScreen.this, totalDrawBanners);
                         AppUtils.saveDrawBanners(FirstScreen.this, drawBanners);
 
+                        int totalTutBanners = (int) mFirebaseRemoteConfig.getLong("tut_cd_total_banners");
+                        List<BannerModel> tutBanners = new ArrayList<>();
+
+                        for (int i = 1; i <= totalTutBanners; i++) {
+                            String bannerImageUrl = mFirebaseRemoteConfig.getString("tut_cd_banner" + i + "_image").trim();
+                            String bannerLInk = mFirebaseRemoteConfig.getString("tut_cd_banner" + i + "_link").trim();
+                            tutBanners.add(new BannerModel(bannerImageUrl, bannerLInk));
+                        }
+
+                        AppUtils.saveTotalTutBanners(FirstScreen.this, totalTutBanners);
+                        AppUtils.saveTutBanners(FirstScreen.this, tutBanners);
+
 
                         // get Onboarding Slider info
                         int totalSlides = (int) mFirebaseRemoteConfig.getLong("Gam_total_slides");

@@ -58,10 +58,12 @@ import com.paintology.lite.trace.drawing.Activity.user_pogress.helper.TutorialUt
 import com.paintology.lite.trace.drawing.Adapter.SubCategoryAdapterAll;
 import com.paintology.lite.trace.drawing.BuildConfig;
 import com.paintology.lite.trace.drawing.Enums.Tutorial_Type;
+import com.paintology.lite.trace.drawing.Model.BannerModel;
 import com.paintology.lite.trace.drawing.Model.Category;
 import com.paintology.lite.trace.drawing.Model.TutorialModel.Tutorialcategory;
 import com.paintology.lite.trace.drawing.Model.TutorialModel.Tutorialdatum;
 import com.paintology.lite.trace.drawing.Model.TutorialModel.Tutorialimages;
+import com.paintology.lite.trace.drawing.databinding.LayoutBannerDrawBinding;
 import com.paintology.lite.trace.drawing.ui.login.LoginActivity;
 import com.paintology.lite.trace.drawing.Model.CategoryModel;
 import com.paintology.lite.trace.drawing.Model.ColorSwatch;
@@ -92,6 +94,7 @@ import com.paintology.lite.trace.drawing.util.FirebaseUtils;
 import com.paintology.lite.trace.drawing.util.KGlobal;
 import com.paintology.lite.trace.drawing.util.MyApplication;
 import com.paintology.lite.trace.drawing.util.StringConstants;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -188,7 +191,32 @@ public class NewSubCategoryActivity extends AppCompatActivity implements SubCate
 
         }
         MyConstantsKt.checkForIntroVideo(this, StringConstants.intro_tutorials);
+        ArrayList<BannerModel> data = AppUtils.getTutBanners(this);
+        for (int i = 0; i < data.size(); i++) {
+            LayoutBannerDrawBinding bannerBinding = LayoutBannerDrawBinding.inflate(getLayoutInflater());
+            Picasso.get().load(Uri.parse(data.get(i).bannerImageUrl)).into(bannerBinding.ivOwnAdv);
+            int finalI = i;
+            bannerBinding.ivOwnAdv.setOnClickListener(v -> {
+                try {
+                    if (BuildConfig.DEBUG) {
+                        Toast.makeText(NewSubCategoryActivity.this,
+                                StringConstants.constants.ad_XX_tutorial_banner_click.replace("XX", String.valueOf(finalI)),
+                                Toast.LENGTH_SHORT).show();
+                    }
+                    FirebaseUtils.logEvents(
+                            NewSubCategoryActivity.this,
+                            StringConstants.constants.ad_XX_tutorial_banner_click.replace("XX", String.valueOf(finalI))
+                    );
+                    KGlobal.openInBrowser(NewSubCategoryActivity.this, data.get(finalI).bannerLInk);
+                } catch (ActivityNotFoundException e) {
+                    Log.e("TAGGG", "Exception at view " + e.getMessage());
+                } catch (Exception e) {
+                    Log.e("TAGG", "Exception " + e.getMessage());
+                }
+            });
 
+            ((LinearLayout) findViewById(R.id.llAds)).addView(bannerBinding.getRoot());
+        }
 
         if (getIntent().hasExtra("total_tutorials")) {
             total_tutorials = getIntent().getIntExtra("total_tutorials", 0);

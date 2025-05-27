@@ -45,6 +45,8 @@ public class AppUtils {
 
     public static final String POLICY_LINK = "main_policy_link";
     public static final String TERMS_LINK = "main_terms_link";
+    private static final String EXTRA_KEY_TUT_BANNERS = "tut_banners";
+    private static final String EXTRA_KEY_TOTAL_TUT_BANNERS = "total_tut_banners";
 
     private static final String EXTRA_KEY_NOTIFICATIONS = "notifications";
     private static final String EXTRA_KEY_SLIDERS = "sliders";
@@ -143,6 +145,16 @@ public class AppUtils {
         editor.putInt(EXTRA_KEY_TOTAL_DRAW_BANNERS, total);
         editor.apply();
     }
+
+    public static void saveTotalTutBanners(Context context, int total) {
+        SharedPreferences appSharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+
+        SharedPreferences.Editor editor = appSharedPrefs.edit();
+        editor.putInt(EXTRA_KEY_TOTAL_TUT_BANNERS, total);
+        editor.apply();
+    }
+
 
     public static int getTotalSlides(Context context) {
         SharedPreferences appSharedPrefs = PreferenceManager
@@ -266,6 +278,34 @@ public class AppUtils {
             return gson.fromJson(json, type);
         }
     }
+
+    public static void saveTutBanners(Context context, List<BannerModel> slideInfos) {
+        SharedPreferences appSharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        String json = gson.toJson(slideInfos);
+
+        SharedPreferences.Editor editor = appSharedPrefs.edit();
+        editor.putString(EXTRA_KEY_TUT_BANNERS, json);
+        editor.apply();
+    }
+
+    public static ArrayList<BannerModel> getTutBanners(Context context) {
+        SharedPreferences appSharedPrefs = PreferenceManager
+                .getDefaultSharedPreferences(context);
+        Gson gson = new Gson();
+        String json = appSharedPrefs.getString(EXTRA_KEY_TUT_BANNERS, "");
+
+        if (TextUtils.isEmpty(json)) {
+            return new ArrayList<>();
+        } else {
+            Type type = new TypeToken<ArrayList<BannerModel>>() {
+            }.getType();
+
+            return gson.fromJson(json, type);
+        }
+    }
+
 
     public static void saveHomeSlideInterval(Context context, int total) {
         SharedPreferences appSharedPrefs = PreferenceManager

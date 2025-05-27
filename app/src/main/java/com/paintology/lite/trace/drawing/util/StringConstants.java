@@ -865,27 +865,13 @@ public class StringConstants {
     public String ad_1st_comm_import_click = "ad_1st_comm_import_click";
     public String drawpage_banner_ferdouse_youtube = "drawpage_banner_ferdouse_youtube";
 
+    public String ad_XX_tutorial_banner_click = "ad_XX_tutorial_banner_click";
     public String ad_XX_draw_banner_click = "ad_XX_draw_banner_click";
-
-    public String ad_XX_resources_banner_click = "ad_XX_resources_banner_click";
-    public String ad_1_resources_banner_click = "ad_1_resources_banner_click";
-    public String ad_2_resources_banner_click = "ad_2_resources_banner_click";
-    public String ad_3_resources_banner_click = "ad_3_resources_banner_click";
-    public String ad_4_resources_banner_click = "ad_4_resources_banner_click";
-
-
     public String ad_XX_dashboard_banner_click = "ad_XX_dashboard_banner_click";
-    public String ad_1_dashboard_banner_click = "ad_1_dashboard_banner_click";
-    public String ad_2_dashboard_banner_click = "ad_2_dashboard_banner_click";
-    public String ad_3_dashboard_banner_click = "ad_3_dashboard_banner_click";
-    public String ad_4_dashboard_banner_click = "ad_4_dashboard_banner_click";
-
-
     public String ad_XX_import_banner_click = "ad_XX_import_banner_click";
-    public String ad_1_import_banner_click = "ad_1_import_banner_click";
-    public String ad_2_import_banner_click = "ad_2_import_banner_click";
-    public String ad_3_import_banner_click = "ad_3_import_banner_click";
-    public String ad_4_import_banner_click = "ad_4_import_banner_click";
+    public String ad_XX_resources_banner_click = "ad_XX_resources_banner_click";
+
+
 
     public String open_post_detail = "open_post_detail";
     //    public String click_community_post = "click_community_post";
