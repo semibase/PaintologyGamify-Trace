@@ -319,12 +319,12 @@ public class FirstScreen extends AppCompatActivity {
                         AppUtils.saveTotalDrawBanners(FirstScreen.this, totalDrawBanners);
                         AppUtils.saveDrawBanners(FirstScreen.this, drawBanners);
 
-                        int totalTutBanners = (int) mFirebaseRemoteConfig.getLong("tut_cd_total_banners");
+                        int totalTutBanners = (int) mFirebaseRemoteConfig.getLong("tut_td_total_banners");
                         List<BannerModel> tutBanners = new ArrayList<>();
 
                         for (int i = 1; i <= totalTutBanners; i++) {
-                            String bannerImageUrl = mFirebaseRemoteConfig.getString("tut_cd_banner" + i + "_image").trim();
-                            String bannerLInk = mFirebaseRemoteConfig.getString("tut_cd_banner" + i + "_link").trim();
+                            String bannerImageUrl = mFirebaseRemoteConfig.getString("tut_td_banner" + i + "_image").trim();
+                            String bannerLInk = mFirebaseRemoteConfig.getString("tut_td_banner" + i + "_link").trim();
                             tutBanners.add(new BannerModel(bannerImageUrl, bannerLInk));
                         }
 
