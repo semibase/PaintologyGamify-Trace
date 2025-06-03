@@ -30,6 +30,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.provider.Settings;
@@ -2098,7 +2099,15 @@ public class GalleryDashboard extends BaseActivity implements View.OnClickListen
             startActivity(new Intent(this, MyMoviesActivity.class));
         }
     }
-
+    public void openDrawer() {
+        try {
+            if (!drawerLayout.isOpen()) {
+                drawerLayout.open();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     /*This method allows us to redicrect in Paintology collection screen, when user click on Paintology Collection icon
      * from dashboard screen then app will redirect to the default collection screen*/
     public void gotogallery() {
@@ -2114,6 +2123,12 @@ public class GalleryDashboard extends BaseActivity implements View.OnClickListen
             _intent.putExtra("levelCount", levelList);
             _intent.putExtra("cate_id", StringConstants.CATE_ID);
             startActivity(_intent);
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    openDrawer();
+                }
+            }, 1000);
         } else {
             Toast.makeText(this, getResources().getString(R.string.no_internet_msg), Toast.LENGTH_SHORT).show();
         }
